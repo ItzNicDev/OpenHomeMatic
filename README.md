@@ -7,8 +7,8 @@ HTTP-POST: **http://192.168.178.43/api/homematic.cgi**
 {
   "method": "Session.login",
   "params": {
-    "username": "Admin",
-    "password": "#Router-homematic-MW29#"
+    "username": "myusername",
+    "password": "mypassword"
   }
 }
 
