@@ -2,6 +2,8 @@
 
 ## Call Order
 
+See [Postman Collection](source/postman/collection.json)
+
 ### Get SID (authenticate)
 HTTP-POST: **http://192.168.178.43/api/homematic.cgi**
 ``` json
