@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "470a0aca-07ec-4cc9-9390-e90943a8e937",
+		"name": "OpenHomeMatic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28541423"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"method\": \"Session.login\",\n    \"params\": {\n        \"username\": \"{{Username}}\",\n        \"password\": \"{{Password}}\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{Host}}/api/homematic.cgi",
+					"protocol": "http",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"homematic.cgi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device List",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"method\": \"Device.listAllDetail\",\n  \"params\": {\n    \"_session_id_\": \"{{SID}}\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{Host}}/api/homematic.cgi",
+					"protocol": "http",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"homematic.cgi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device Get Value",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"method\": \"Channel.getValue\",\n  \"params\": {\n    \"_session_id_\": \"{{SID}}\",\n    \"id\": \"{{DeviceID}}\"\n  },\n  \"id\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{Host}}/api/homematic.cgi",
+					"protocol": "http",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"api",
+						"homematic.cgi"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
