@@ -2,6 +2,7 @@
 
 ## Call Order
 
+### Get SID (authenticate)
 HTTP-POST: **http://192.168.178.43/api/homematic.cgi**
 ``` json
 {
@@ -12,4 +13,16 @@ HTTP-POST: **http://192.168.178.43/api/homematic.cgi**
   }
 }
 
+```
+
+### Get sensor value by sensor id
+HTTP-POST: **http://192.168.178.43/api/homematic.cgi**
+``` json
+{
+  "method": "Channel.getValue",
+  "params": {
+    "_session_id_": "mysessionid",
+    "id": 1419
+  },
+}
 ```
